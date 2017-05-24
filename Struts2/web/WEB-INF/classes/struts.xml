@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+<struts>
+    <package name="basicstruts" extends="struts-default">
+    <action name="index">
+        <result>index.jsp</result>
+    </action>   
+    <action name="*Product" class="action.ProductAction" method="{1}">
+        <result name="list" type="redirect">listProduct</result>
+        <result name="input">addProduct.jsp</result>
+        <result name="edit">/product/edit.jsp</result>
+        <result name="listJSP">/product/list.jsp</result>
+    </action>
+    
+<!--    <action name="addProduct" class="action.ProductAction" method="add">
+        <result name="show_message">show.jsp</result>
+    </action>
+    <action name="listProduct" class="action.ProductAction" method="list">
+        <result name="list">list.jsp</result>
+    </action>
+    -->
+     <action name="upload" class="action.UploadAction" method="upload">
+        <result name="success">success.jsp</result>
+    </action>
+    </package> 
+</struts>
